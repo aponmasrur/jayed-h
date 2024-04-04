@@ -1,0 +1,58 @@
+<div class="h-[5.5rem]">
+  <div class="flex h-full flex-row gap-2 items-center px-8">
+    <div class="">
+      <div>
+        <img
+          class="h-8 rounded-[.215rem]"
+          src="{{ logoUrl }}"
+          alt="logo-dark"
+        />
+      </div>
+    </div>
+    <div class="hidden sm:block">
+      <ul class="flex flex-row">
+        <app-nav-link-top
+          *ngFor="let item of navLinksData; index as i"
+          [label]="item.label"
+          [href]="item.href"
+        ></app-nav-link-top>
+      </ul>
+    </div>
+
+    <!-- hamburger -->
+    <div class="sm:hidden ml-auto">
+      <div>
+        <svg
+          class="block h-6 w-6 fill-current"
+          viewBox="0 0 20 20"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <title>Mobile menu</title>
+          <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+        </svg>
+      </div>
+    </div>
+
+    <!-- social-link-top -->
+    <div class="ml-auto hidden lg:block">
+      <div class="flex flex-row gap-4 items-center">
+        <!--featured social Link Top -->
+        <app-featured-social-link-top />
+
+        <div class="border-l h-6 border-neutral-400"></div>
+
+        <!-- social-link-top -->
+        <ul class="flex flex-row items-center">
+          <!-- <li *ngIf="!isFirst" class="h-[1px] w-[1px] bg-neutral-200"></li> -->
+          <app-social-link-top
+            *ngFor="let item of socialLinksData; first as isFirst"
+            [href]="item.href"
+            [label]="item.shortName"
+            [isFirst]="isFirst"
+          >
+          </app-social-link-top>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

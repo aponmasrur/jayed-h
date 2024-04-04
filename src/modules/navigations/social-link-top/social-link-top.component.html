@@ -1,0 +1,16 @@
+<li
+  [ngClass]="
+    isFirst
+      ? ''
+      : 'ml-4 before:-left-2 before:-translate-x-1/2 relative before:absolute before:top-1/2 before:-translate-y-1/2 before:w-[2px] before:h-[2px] before:bg-neutral-500 before:rounded-full'
+  "
+>
+  <div class="flex flex-row items-center">
+    <a
+      routerLink="{{ href }}"
+      class="text-base text-neutral-200 lg:hover:text-orange-300"
+      >{{ label }}</a
+    >
+    <!-- <p>{{isFirst}}</p> -->
+  </div>
+</li>
